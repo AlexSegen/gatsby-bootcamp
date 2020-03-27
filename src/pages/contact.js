@@ -1,12 +1,13 @@
 import React from 'react';
+import Layout from '../components/layout';
 
 const ContactPage = () => {
     return ( 
-        <div>
+        <Layout>
             <h1>Contact</h1>
             <p>You can find me on Twitter as 
-                <a href="https://twitter.com/pixelagil" target="_blank">@pixelagil</a> </p>
-        </div>
+                <a href="https://twitter.com/pixelagil" rel="noopener noreferrer" target="_blank">@pixelagil</a> </p>
+        </Layout>
      );
 }
  
