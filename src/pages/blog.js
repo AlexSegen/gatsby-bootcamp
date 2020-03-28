@@ -7,19 +7,22 @@ const Blog =() => {
 
     const data = useStaticQuery(graphql`
     query {
-        allMarkdownRemark {
-          edges {
-            node {
-              frontmatter {
-                title
-                date
-              }
-              html
-              excerpt
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              title
+              date
+            }
+            html
+            excerpt
+            fields {
+              slug
             }
           }
         }
-      }`);
+      }
+    }`);
 
     const { edges } = data.allMarkdownRemark;
 
