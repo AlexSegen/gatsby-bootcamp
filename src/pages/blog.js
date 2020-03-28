@@ -23,8 +23,6 @@ const Blog =() => {
 
     const { edges } = data.allMarkdownRemark;
 
-      console.log(data);
-
     return (
         <Layout>
             <h1>My Blog</h1>
@@ -32,8 +30,8 @@ const Blog =() => {
             <hr/>
             <ol>
                 {
-                    edges.map(item => (
-                        <li><p>{item.node.frontmatter.title} <br/> <small>{item.node.frontmatter.date}</small></p></li>
+                    edges.map((item, index) => (
+                        <li key={index}><p>{item.node.frontmatter.title} <br/> <small>{item.node.frontmatter.date}</small></p></li>
                     ))
                 }
             </ol>
