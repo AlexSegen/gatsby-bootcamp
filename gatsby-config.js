@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: "My Gatsby Bootcamp",
+    title: "Alex Site",
     author: "Alex Vivas"
   },
   plugins: [
