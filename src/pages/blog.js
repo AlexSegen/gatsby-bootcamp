@@ -1,7 +1,9 @@
 import React from 'react';
 import Layout from '../components/layout';
 
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby';
+
+import styles from './blog.module.scss';
 
 const Blog =() => {
 
@@ -31,12 +33,14 @@ const Blog =() => {
             <h1>My Blog</h1>
             <p>This is the blog page</p>
             <hr/>
-            <ol>
+            <ol className={styles.posts}>
                 {
                     edges.map((item, index) => (
-                        <li key={index}>
-                          <h2><Link to={`/blog/${item.node.fields.slug}`}>{item.node.frontmatter.title}</Link></h2>
-                          <small>{item.node.frontmatter.date}</small>
+                        <li className={styles.post} key={index}>
+                          <Link to={`/blog/${item.node.fields.slug}`}>
+                            <h2>{item.node.frontmatter.title}</h2>
+                            <p>{item.node.frontmatter.date}</p>
+                          </Link>
                         </li>
                     ))
                 }
